@@ -10,3 +10,12 @@ app.config['MYSQL_PASSWORD'] = ''
 app.config['MYSQL_DB'] = 'app_citas'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
+
+@app.route('/')
+def home():
+    return render_template("contenido.html")    
+
+@app.route('/layout', methods = ["GET", "POST"])
+def layout():
+    session.clear()
+    return render_template("contenido.html")
