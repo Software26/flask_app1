@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'app_aves'
+app.config['MYSQL_DB'] = 'app_citas'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 mysql = MySQL(app)
 
@@ -92,7 +92,7 @@ def registro():
         interes = request.form['interes']
 
         cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO users (name, email, password, id_tip_usu, interes) VALUES (%s,%s,%s,%s,%s)", (name, email, password,tip,interes,))
+        cur.execute("INSERT INTO users (name, email, password, id_tip_usu, interes) VALUES (%s,%s,%s,%s,%s)", (name, email, password, tip, interes))
         mysql.connection.commit()
         notificacion.title = "Registro Exitoso"
         notificacion.message="Ya esta registrado en la aplicacion"
