@@ -20,8 +20,7 @@ def home():
 def layout():
     session.clear()
     return render_template("contenido.html")
-
-
+tec
 @app.route('/login', methods= ["GET", "POST"])
 def login():
 
